@@ -1,27 +1,31 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import _ from 'lodash'; 
 
-import Footer from "./Footer";
-import Header from "./Header";
+import {Grid, Row, Col, PageHeader, Button, ButtonGroup, Input} from 'react-bootstrap'
+import FixedDataTable from 'fixed-data-table';
+const Table = FixedDataTable.Table
+const Column = FixedDataTable.Column
 
-export default class Layout extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      title: "Welcome Again!",
-      paragraph: "Some text...with more text!" 
-    };
-  }
 
-  changeTitle(title) {
-    this.setState({title});
+export default class HarView extends React.Component {
+
+  constructor(){
+    super() 
+
+    
   }
 
   render() {
+
     return (
-      <div>
-        <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
-        <Footer />
-      </div>
-    );
+      <Grid>
+        <Row>
+          <Col sm={12}>
+            <PageHeader>Sebs D3 ready!</PageHeader>
+          </Col>
+        </Row>
+      </Grid>   
+      )
   }
 }
